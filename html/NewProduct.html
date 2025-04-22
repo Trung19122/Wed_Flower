@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="../css/NewProduct.css">
+    
+</head>
+<body>
+  <div class="header">
+    <div class="navbar-custom">
+      <ul class="nav nav-links">
+        <li class="nav-item">
+          <a href="../index.html">
+            <img src="../img/logo.png" alt="Logo">
+          </a>
+        </li>
+        <li class="nav-item" id="auth-link"></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goToThanhToan(event)">Thanh toán</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">CONTACT : 086868686</a>
+        </li>
+      </ul>
+    
+      <div class="search-wrapper">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="menu-wrapper">
+      <div class="menu-left">
+        <div class="menu-item">
+          <a href="../html/NewProduct.html" style="text-decoration: none; color: white;">
+            <i class="fas fa-shopping-basket"></i> New Products
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="../index.html#best-sales" style="text-decoration: none; color: white;">
+            Best Sales <span class="badge">HOT</span>
+          </a>
+          
+        </div>
+        <div class="menu-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="offersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Danh mục hoa
+          </a>
+          <div class="dropdown-menu" aria-labelledby="offersDropdown">
+            <a class="dropdown-item" href="../index.html#hoa-sn">Hoa Sinh Nhật</a>
+            <a class="dropdown-item" href="../index.html#hoa-kt">Hoa Khai Trương</a>
+            <a class="dropdown-item" href="../index.html#lan-hd">Lan Hồ Điệp</a>
+          </div>
+        </div>
+        
+        <div class="menu-item">News</div>
+      </div>
+    
+      <div class="menu-right">
+        <a href="../html/GioHang.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <section class="category-section">
+    <h2 class="category-title">
+      New <span>Products</span>
+    </h2>
+  </section>
+  <section class="products-section">
+      <div class="row" id="productsContainer">
+        <div class="col-6 col-md-4 col-lg-3 mb-5">
+          <div class="products-box">
+            <img src="../img/pr1.png" alt="Caramel Ngọt Ngào">
+            <p class="name mb-1">Caramel Ngọt Ngào</p>
+            <p class="price mb-2">350.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Caramel Ngọt Ngào" data-price="350000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/pr2.png" alt="Bông Gòn">
+            <p class="name mb-1">Bông Gòn</p>
+            <p class="price mb-2">250.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Bông Gòn" data-price="250000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/pr3.png" alt="Red Rose">
+            <p class="name mb-1">Red Rose</p>
+            <p class="price mb-2">300.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Red Rose" data-price="300000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/pr4.png" alt="Giỏ Hoa Rực Rỡ">
+            <p class="name mb-1">Giỏ Hoa Rực Rỡ</p>
+            <p class="price mb-2">500.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Giỏ Hoa Rực Rỡ" data-price="500000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/new1.png" alt="Giỏ Hoa Yêu Thương Rực Rỡ 621">
+            <p class="name mb-1">Giỏ Hoa Yêu Thương Rực Rỡ 621</p>
+            <p class="price mb-2">3.500.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Giỏ Hoa Yêu Thương Rực Rỡ 621" data-price="3500000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/new2.png" alt="Bó Hoa Me Before You">
+            <p class="name mb-1">Bó Hoa Me Before You</p>
+            <p class="price mb-2">2.050.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Bó Hoa Me Before You" data-price="2050000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/new3.png" alt="Bó Hoa Yêu Thương Nồng Ấm 020">
+            <p class="name mb-1">Bó Hoa Yêu Thương Nồng Ấm 020</p>
+            <p class="price mb-2">3.000.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Bó Hoa Yêu Thương Nồng Ấm 020" data-price="3000000">Mua Ngay</button>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="products-box">
+            <img src="../img/new4.png" alt="Giỏ Hoa Món Quà Hạnh Phúc 650">
+            <p class="name mb-1">Giỏ Hoa Món Quà Hạnh Phúc 650</p>
+            <p class="price mb-2">50.000.000₫</p>
+            <button class="btn btn-success btn-order" data-name="Giỏ Hoa Món Quà Hạnh Phúc 650" data-price="50000000">Mua Ngay</button>
+          </div>
+        </div>
+        
+      </div>
+  </section>
+  <hr style="border: none; height: 2px; background-color:rgb(228, 155, 146);">
+  <footer  class="py-5" style="color: rgb(229, 171, 163);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="../img/logo.png" alt="FlowerCorner logo" class="mb-3" style="max-width: 150px;">
+          <p class="mb-1">Hotline: 1999 999 999 - 0888 888 888</p>
+          <p class="mb-3">Email: lafleur@gmail.com</p>
+  
+          <img src="../img/qr-code.png" alt="QR Code" class="mb-2" style="width: 100px;">
+          <p class="mb-2">Tải ứng dụng ngay!</p>
+          <div class="d-flex">
+            <img src="../img/appstore.png" alt="App Store" class="mr-2" style="width: 110px;">
+            <img src="../img/ggplay.png" alt="Google Play" style="width: 110px;">
+          </div>
+        </div>
+  
+        <!-- Customer Care -->
+        <div class="col-md-3 mb-4">
+          <h5 class="font-weight-bold mb-3">CHĂM SÓC KHÁCH HÀNG</h5>
+          <ul class="list-unstyled" >
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Chính Sách Vận Chuyển</a></li>
+            <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            <li><a href="#">Hình Thức Thanh Toán</a></li>
+            <li><a href="#">Bảo Mật Thông Tin</a></li>
+            <li><a href="#">Chính Sách Hoàn Tiền</a></li>
+            <li><a href="#">Xử Lý Khiếu Nại</a></li>
+            <li><a href="#">Tại Sao Nên Chọn FlowerCorner.vn</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+  
+        <!-- Social -->
+        <div class="col-md-2 mb-4">
+          <h5 class="font-weight-bold mb-3">THEO DÕI</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+  
+        <!-- Shop Info -->
+        <div class="col-md-4">
+          <h5 class="font-weight-bold mb-3">SHOP HOA LAFLEUR</h5>
+          <p><strong>Cửa hàng chính:</strong><br>1 , P.5, Q.1, TP.HCM</p>
+          <p><strong>Cửa Hàng TP.HCM:</strong><br>111 , P.5, Q.1, TP.HCM</p>
+          <p><strong>Chi nhánh Hà Nội:</strong><br>11, Ba Đình, Hà Nội</p>
+          <p><strong>CÔNG TY TNHH NKT</strong><br>Mã số thuế: 0123456789</p>
+        </div>
+  
+      </div>
+    </div>
+  </footer>
+  <script>
+    function updateAuthLink() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const authLink = document.getElementById('auth-link');
+
+      if (isLoggedIn) {
+        authLink.innerHTML = `<a class="nav-link" href="#" onclick="logout()">Đăng xuất</a>`;
+      } else {
+        authLink.innerHTML = `<a class="nav-link" href="../html/DangNhap.html">Đăng nhập</a>`;
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('user');
+      alert("Bạn đã đăng xuất!");
+      updateAuthLink();
+      window.location.href = "../index.html";
+    }
+    document.addEventListener('DOMContentLoaded', updateAuthLink);
+    function goToThanhToan(event) {
+      event.preventDefault();
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để tiếp tục thanh toán!");
+        window.location.href = "../html/DangNhap.html"; // đổi nếu trang login khác
+      } else {
+        window.location.href = "./ThanhToan.html";
+      }
+    }
+    // Cập nhật số lượng giỏ hàng hiển thị
+    function updateCartCount() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let totalQuantity = 0;
+      cart.forEach(item => {
+        totalQuantity += item.quantity;
+      });
+      const cartCountElement = document.getElementById('cart-count');
+      if (cartCountElement) {
+        cartCountElement.innerText = totalQuantity;
+      }
+    }
+  
+    // Xử lý khi bấm "Mua Ngay"
+    document.querySelectorAll('.btn-order').forEach(button => {
+      button.addEventListener('click', function(event) {
+        event.preventDefault();
+  
+        // 1. Kiểm tra đăng nhập
+        let isLoggedIn = localStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+          alert("Bạn cần đăng nhập để mua sản phẩm!");
+          window.location.href = "../html/DangNhap.html";
+          return;
+        }
+  
+        // 2. Lấy thông tin sản phẩm từ data-attribute
+        const name = this.getAttribute('data-name');
+        const price = parseInt(this.getAttribute('data-price'));
+  
+        // 3. Lấy giỏ hàng từ localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  
+        // 4. Kiểm tra xem sản phẩm đã có trong giỏ chưa
+        const existingItem = cart.find(item => item.name === name);
+        if (existingItem) {
+          existingItem.quantity += 1;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+  
+        // 5. Lưu lại vào localStorage và cập nhật số lượng hiển thị
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount(); // 👈 Gọi hàm cập nhật số lượng
+        alert("Đã thêm vào giỏ hàng!");
+      });
+    });
+  
+    // Cập nhật số lượng ngay khi trang load
+    updateCartCount();
+  </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Thanh Toán</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <script src="../js/jquery-3.7.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/hoasinhnhat.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <style>
+    body {
+      padding: 40px;
+    }
+    .checkout-box {
+      background-color: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    .checkout-form label {
+      font-weight: 600;
+      margin-top: 15px;
+    }
+    .checkout-form input {
+      margin-bottom: 10px;
+    }
+    .checkout-form button {
+      border: rgb(229,171,163);
+      font-size: 16px;
+      padding: 12px;
+      transition: transform 0.3s ease;
+    }
+    button:hover {
+      transform: scale(1.1);
+    }
+    .error-message {
+      color: red;
+      font-size: 12px;
+      margin-top: -8px;
+      margin-bottom: 8px;
+    }
+    .input-error {
+      border: 1px solid red !important;
+    }
+    .qr-img {
+      max-width: 160px;
+      display: block;
+      margin: 20px auto;
+    }
+    .thank-you {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="navbar-custom">
+      <ul class="nav nav-links">
+        <li class="nav-item">
+          <a href="../index.html">
+            <img src="../img/logo.png" alt="Logo">
+          </a>
+        </li>
+      </ul>
+    
+      <div class="search-wrapper">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="menu-wrapper">
+      <div class="menu-left">
+        <div class="menu-item">
+          <a href="../html/NewProduct.html" style="text-decoration: none; color: white;">
+            <i class="fas fa-shopping-basket"></i> New Products
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="../index.html#best-sales" style="text-decoration: none; color: white;">
+            Best Sales <span class="badge">HOT</span>
+          </a>
+          
+        </div>
+        <div class="menu-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="offersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Danh mục hoa
+          </a>
+          <div class="dropdown-menu" aria-labelledby="offersDropdown">
+            <a class="dropdown-item" href="../index.html#hoa-sn">Hoa Sinh Nhật</a>
+            <a class="dropdown-item" href="../index.html#hoa-kt">Hoa Khai Trương</a>
+            <a class="dropdown-item" href="../index.html#lan-hd">Lan Hồ Điệp</a>
+          </div>
+        </div>
+        
+        <div class="menu-item">News</div>
+      </div>
+    
+        <div class="menu-right">
+        <a href="../html/GioHang.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+        </div>
+    </div>
+</div>
+  <div class="checkout-box">
+    <h2 class="text-center mb-4">Thanh Toán Đơn Hàng</h2>
+
+    <form id="payment-form" class="checkout-form">
+      <div class="form-group">
+        <label for="fullname">Họ tên:</label>
+        <input type="text" id="fullname" name="fullname" class="form-control">
+        <div class="error-message" id="name-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Số điện thoại:</label>
+        <input type="text" id="phone" name="phone" class="form-control">
+        <div class="error-message" id="phone-error"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" name="address" class="form-control">
+        <div class="error-message" id="address-error"></div>
+      </div>
+
+      <hr>
+      <div class="mb-3">
+        <p>Tiền hàng: <strong id="productTotal">0₫</strong></p>
+        <p>Phí ship: <strong id="shipFee">0₫</strong></p>
+        <p class="mt-2">Tổng thanh toán: <strong id="totalAmount">0₫</strong></p>
+      </div>
+
+      <h5 class="text-center mt-4">Quét mã để thanh toán</h5>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://iuh.edu.vn" alt="Mã QR" class="qr-img">
+
+      <button type="submit" class="btn btn-success btn-block mt-4" style="background-color: rgb(229,171,163);">Thanh Toán</button>
+    </form>
+
+    <div id="thank-you-message" class="thank-you" style="display: none;">
+      <p>Cảm ơn quý khách đã mua hàng!</p>
+      <a href="../index.html">Quay lại trang chủ</a>
+    </div>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let productTotal = 0;
+    cart.forEach(item => productTotal += item.price * item.quantity);
+    const shipFee = Math.ceil(productTotal * 0.1); 
+    const total = productTotal + shipFee;
+
+    document.getElementById('productTotal').textContent = productTotal.toLocaleString() + '₫';
+    document.getElementById('shipFee').textContent = shipFee.toLocaleString() + '₫';
+    document.getElementById('totalAmount').textContent = total.toLocaleString() + '₫';
+
+    document.getElementById('payment-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('fullname').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const address = document.getElementById('address').value.trim();
+      document.getElementById('name-error').textContent = '';
+      document.getElementById('phone-error').textContent = '';
+      document.getElementById('address-error').textContent = '';
+
+      let isValid = true;
+
+      if (!name) {
+        document.getElementById('name-error').textContent = "Vui lòng nhập họ tên.";
+        isValid = false;
+      } else if (/\d/.test(name)) {
+        document.getElementById('name-error').textContent = "Họ tên không được chứa số.";
+        isValid = false;
+      }
+
+      if (!phone) {
+        document.getElementById('phone-error').textContent = "Vui lòng nhập số điện thoại.";
+        isValid = false;
+      } else if (!/^[0-9]{10}$/.test(phone)) {
+        document.getElementById('phone-error').textContent = "Số điện thoại không hợp lệ";
+        isValid = false;
+      }
+
+      if (!address) {
+        document.getElementById('address-error').textContent = "Vui lòng nhập địa chỉ.";
+        isValid = false;
+      }
+      const productTotal = cart.reduce((total, item) => total + item.price * item.quantity, 0);
+      if (productTotal <= 0) {
+        alert("Tổng tiền hàng phải lớn hơn 0 để thực hiện thanh toán!");
+        isValid = false;
+      }
+
+      if (!isValid) return;
+      const shipFee = productTotal * 0.1;
+      const total = productTotal + shipFee;
+      const order = {
+        customer: { fullname: name, phone, address },
+        cart,
+        productTotal: productTotal.toLocaleString() + '₫',
+        shipFee: shipFee.toLocaleString() + '₫',
+        total: total.toLocaleString() + '₫',
+      };
+      localStorage.setItem('order', JSON.stringify(order));
+      localStorage.removeItem('cart');
+      document.getElementById('cart-count') && (document.getElementById('cart-count').innerText = 0);
+      document.getElementById('payment-form').style.display = 'none';
+      document.getElementById('thank-you-message').style.display = 'block';
+    });
+
+  </script>
+</body>
+</html>
