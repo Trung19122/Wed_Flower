@@ -261,3 +261,55 @@ footer ul li a {
 footer ul li a:hover {
     text-decoration: underline;
 }
+@media (max-width: 768px) {
+    .navbar-custom, 
+    .menu-wrapper,
+    .bestseller-header {
+        margin: 10px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-item a {
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .search-wrapper {
+        max-width: 100%;
+    }
+
+    .menu-left, 
+    .menu-right {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-item {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .products-box img {
+        width: 100%;
+    }
+
+    #ImgGT {
+        margin: 20px;
+    }
+
+    .carousel-inner img {
+        height: 250px;
+    }
+}

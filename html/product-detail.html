@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/jquery-3.7.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="stylesheet" href="../css/pd.css">
+    
+</head>
+<body>
+  <div class="header">
+    <div class="navbar-custom">
+      <ul class="nav nav-links">
+        <li class="nav-item">
+          <a href="../index.html">
+            <img src="../img/logo.png" alt="Logo">
+          </a>
+        </li>
+        <li class="nav-item" id="auth-link"></li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="goToThanhToan(event)">Thanh toán</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">CONTACT : 086868686</a>
+        </li>
+      </ul>
+    
+      <div class="search-wrapper">
+        <input type="text" placeholder="What are you looking for?">
+        <button type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+    <div class="menu-wrapper">
+      <div class="menu-left">
+        <div class="menu-item">
+          <a href="../html/NewProduct.html" style="text-decoration: none; color: white;">
+            <i class="fas fa-shopping-basket"></i> New Products
+          </a>
+        </div>
+        <div class="menu-item">
+          <a href="../index.html#best-sales" style="text-decoration: none; color: white;">
+            Best Sales <span class="badge">HOT</span>
+          </a>
+          
+        </div>
+        <div class="menu-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="offersDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Danh mục hoa
+          </a>
+          <div class="dropdown-menu" aria-labelledby="offersDropdown">
+            <a class="dropdown-item" href="../index.html#hoa-sn">Hoa Sinh Nhật</a>
+            <a class="dropdown-item" href="../index.html#hoa-kt">Hoa Khai Trương</a>
+            <a class="dropdown-item" href="../index.html#lan-hd">Lan Hồ Điệp</a>
+          </div>
+        </div>
+        
+        <div class="menu-item">News</div>
+      </div>
+    
+      <div class="menu-right">
+        <a href="../html/GioHang.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+    <section class="product-detail">
+        <div class="product-img">
+            <img id="product-img" src="" alt="Sản phẩm chi tiết">
+        </div>
+        <div class="product-info">
+            <h1 id="product-name">Tên sản phẩm</h1>
+            <p class="description" id="product-description">Mô tả sản phẩm...</p>
+            <p class="price" id="product-price">Giá: 0đ</p>
+            <p>
+                <strong>Mô tả:</strong><br>
+                Liên hệ đặt hoa trực tiếp (Viber/Zalo): <strong>0976 574 484</strong> – <strong>0908 379 141</strong><br><br>
+              
+                <strong>Quy trình đặt hoa:</strong><br>
+                1. Quý khách vui lòng chọn mẫu hoa yêu thích.<br>
+                2. Cung cấp đầy đủ thông tin: nội dung thiệp, ngày giờ giao hoa, địa chỉ và số điện thoại người nhận.<br>
+                3. Thanh toán bằng cách chuyển khoản hoặc thanh toán trực tiếp khi nhận hoa.<br><br>
+              
+                <strong>Shop Hoa Tươi CiTi</strong> chuyên cung cấp dịch vụ điện hoa toàn quốc: hoa khai trương, hoa mừng thành lập công ty, hoa tân gia, hoa sinh nhật, hoa chia buồn, vòng hoa tang lễ, hoa sự kiện...<br>
+                <em>Miễn phí giao hàng khu vực nội thành tại 63 tỉnh thành trên cả nước.</em><br><br>
+              
+                <strong>Hoatuoiciti.com</strong> luôn lắng nghe và phục vụ khách hàng với phương châm: <em>"Khách hàng là thượng đế".</em>
+            </p>
+            <button class="buy-now buy-button">Mua ngay</button>
+        </div>
+    </section>
+  <hr style="border: none; height: 2px; background-color:rgb(228, 155, 146);">
+  <footer  class="py-5" style="color: rgb(229, 171, 163);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <img src="../img/logo.png" alt="FlowerCorner logo" class="mb-3" style="max-width: 150px;">
+          <p class="mb-1">Hotline: 1999 999 999 - 0888 888 888</p>
+          <p class="mb-3">Email: lafleur@gmail.com</p>
+  
+          <img src="../img/qr-code.png" alt="QR Code" class="mb-2" style="width: 100px;">
+          <p class="mb-2">Tải ứng dụng ngay!</p>
+          <div class="d-flex">
+            <img src="../img/appstore.png" alt="App Store" class="mr-2" style="width: 110px;">
+            <img src="../img/ggplay.png" alt="Google Play" style="width: 110px;">
+          </div>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h5 class="font-weight-bold mb-3">CHĂM SÓC KHÁCH HÀNG</h5>
+          <ul class="list-unstyled" >
+            <li><a href="#">Giới Thiệu</a></li>
+            <li><a href="#">Liên Hệ</a></li>
+            <li><a href="#">Chính Sách Vận Chuyển</a></li>
+            <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+            <li><a href="#">Hình Thức Thanh Toán</a></li>
+            <li><a href="#">Bảo Mật Thông Tin</a></li>
+            <li><a href="#">Chính Sách Hoàn Tiền</a></li>
+            <li><a href="#">Xử Lý Khiếu Nại</a></li>
+            <li><a href="#">Tại Sao Nên Chọn FlowerCorner.vn</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2 mb-4">
+          <h5 class="font-weight-bold mb-3">THEO DÕI</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="font-weight-bold mb-3">SHOP HOA LAFLEUR</h5>
+          <p><strong>Cửa hàng chính:</strong><br>1 , P.5, Q.1, TP.HCM</p>
+          <p><strong>Cửa Hàng TP.HCM:</strong><br>111 , P.5, Q.1, TP.HCM</p>
+          <p><strong>Chi nhánh Hà Nội:</strong><br>11, Ba Đình, Hà Nội</p>
+          <p><strong>CÔNG TY TNHH NKT</strong><br>Mã số thuế: 0123456789</p>
+        </div>
+  
+      </div>
+    </div>
+
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id');
+        const products = [ { id: 1, name: "Caramel Ngọt Ngào", description: "Mô tả sản phẩm Caramel Ngọt Ngào", price: "350.000₫", image: "../img/pr1.png" },
+            { id: 2, name: "Bông Gòn", description: "Mô tả sản phẩm Bông Gòn", price: "250.000₫", image: "../img/pr2.png" },
+            { id: 3, name: "Caramel Ngọt Ngào", description: "Mô tả sản phẩm Caramel Ngọt Ngào", price: "300.000₫", image: "../img/hsn1.png" },
+            { id: 4, name: "Về Bên Nhau", description: "Mô tả sản phẩm Về Bên Nhau", price: "500.000₫", image: "../img/hsn2.png" },
+            { id: 5, name: "Đam Mê", description: "Mô tả sản phẩm Đam Mê", price: "400.000₫", image: "../img/hsn3.png" },
+            { id: 6, name: "Yểu Điệu", description: "Mô tả sản phẩm Yểu Điệu", price: "220.000₫", image: "../img/hsn4.png" },
+            { id: 7, name: "Vintage Love", description: "Mô tả sản phẩm Vintage Love", price: "260.000₫", image: "../img/hsn5.png" },
+            { id: 8, name: "Đam Mê", description: "Mô tả sản phẩm Đam Mê", price: "400.000₫", image: "../img/pr5.png" },
+            { id: 9, name: "Red Rose", description: "Mô tả sản phẩm Red Rose", price: "300.000₫", image: "../img/pr3.png" },
+            { id: 10, name: "Thiên Thần", description: "Mô tả sản phẩm Thiên Thần", price: "500.000₫", image: "../img/pr4.png" },
+            { id: 11, name: "Đam Mê", description: "Mô tả sản phẩm Đam Mê", price: "400.000₫", image: "../img/pr5.png" },
+            { id: 12, name: "Yểu Điệu", description: "Mô tả sản phẩm Yểu Điệu", price: "220.000₫", image: "../img/pr6.png" },
+            { id: 13, name: "Vintage Love", description: "Mô tả sản phẩm Vintage Love", price: "260.000₫", image: "../img/pr7.png" },
+            { id: 14, name: "Burning Love", description: "Mô tả sản phẩm Burning Love", price: "450.000₫", image: "../img/pr8.png" },
+            { id: 15, name: "Kệ Hoa Khai Trương Nhiệt Huyết", description: "Mô tả sản phẩm Kệ Hoa Khai Trương Nhiệt Huyết", price: "890.000₫", image: "../img/kt1.png" },
+            { id: 16, name: "Hoa Khai Trương Cát Tường", description: "Mô tả sản phẩm Hoa Khai Trương Cát Tường", price: "920.000₫", image: "../img/kt2.png" },
+            { id: 17, name: "Kệ Hoa Chúc Mừng Hồng Phát 2", description: "Mô tả sản phẩm Kệ Hoa Chúc Mừng Hồng Phát 2", price: "1.520.000₫", image: "../img/kt3.png" },
+            { id: 18, name: "Kệ Hoa Khai Trương Trang Trọng", description: "Mô tả sản phẩm Kệ Hoa Khai Trương Trang Trọng", price: "1.790.000₫", image: "../img/kt4.png" },
+            { id: 19, name: "Hoa Khai Trương Vang Danh", description: "Mô tả sản phẩm Hoa Khai Trương Vang Danh", price: "1.160.000₫", image: "../img/kt5.png" },
+            { id: 20, name: "Hoa Chúc Mừng Vững Bền", description: "Mô tả sản phẩm Hoa Chúc Mừng Vững Bền", price: "1.520.000₫", image: "../img/kt6.png" },
+            { id: 21, name: "Hoa Khai Trương - Phồn Vinh", description: "Mô tả sản phẩm Hoa Khai Trương - Phồn Vinh", price: "2.160.000₫", image: "../img/kt7.png" },
+            { id: 22, name: "Kệ Hoa Khai Trương Khải Hoàn", description: "Mô tả sản phẩm Kệ Hoa Khai Trương Khải Hoàn", price: "2.050.000₫", image: "../img/kt8.png" },
+            { id: 23, name: "Chậu Lan Hồ Điệp Tết - Phát Tài", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp Tết - Phát Tài", price: "1,590,000₫", image: "../img/lhd1.png" },
+            { id: 24, name: "Chậu Lan Hồ Điệp - Sung Túc", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - Sung Túc", price: "11,850,000₫", image: "../img/lhd2.png" },
+            { id: 25, name: "Chậu Lan Hồ Điệp - 011", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - 011", price: "2,910,000₫", image: "../img/lhd3.png" },
+            { id: 26, name: "Chậu Lan Hồ Điệp - 047", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - 047", price: "4,230,000₫", image: "../img/lhd4.png" },
+            { id: 27, name: "Chậu Lan Hồ Điệp - 103", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - 103", price: "3,730,000₫", image: "../img/lhd5.png" },
+            { id: 28, name: "Mùa Đoàn Viên", description: "Mô tả sản phẩm Mùa Đoàn Viên", price: "8,690,000₫", image: "../img/lhd6.png" },
+            { id: 29, name: "Chậu Lan Hồ Điệp - 061", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - 061", price: "7,240,000₫", image: "../img/lhd7.png" },
+            { id: 30, name: "Chậu Lan Hồ Điệp - 027", description: "Mô tả sản phẩm Chậu Lan Hồ Điệp - 027", price: "2,860,000₫", image: "../img/lhd8.png" }
+        ];
+
+        const product = products.find(p => p.id === parseInt(productId));
+
+        if (product) {
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-description').innerText = product.description;
+            document.getElementById('product-price').innerText = `Giá: ${product.price}`;
+            document.getElementById('product-img').src = product.image;
+
+            const buyButton = document.querySelector('.buy-button');
+            buyButton.setAttribute('data-name', product.name);
+            let priceNumber = parseInt(product.price.replace(/[^\d]/g, ''));
+            buyButton.setAttribute('data-price', priceNumber);
+        } else {
+            document.getElementById('product-name').innerText = "Sản phẩm không tồn tại";
+        }
+
+        function updateCartCount() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let totalQuantity = cart.reduce((total, item) => total + item.quantity, 0);
+            document.getElementById('cart-count').innerText = totalQuantity;
+        }
+
+        updateCartCount();
+
+        document.querySelectorAll('.buy-button').forEach(button => {
+            button.addEventListener('click', function (event) {
+            event.preventDefault();
+            let isLoggedIn = localStorage.getItem('isLoggedIn');
+            if (!isLoggedIn) {
+                alert("Bạn cần đăng nhập để mua sản phẩm!");
+                window.location.href = "../html/DangNhap.html";
+                return;
+            }
+
+            const name = this.getAttribute('data-name');
+            const price = parseInt(this.getAttribute('data-price'));
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.name === name);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            alert("Đã thêm vào giỏ hàng!");
+            });
+        });
+    });
+
+    function updateAuthLink() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const authLink = document.getElementById('auth-link');
+
+      if (isLoggedIn) {
+        authLink.innerHTML = `<a class="nav-link" href="#" onclick="logout()">Đăng xuất</a>`;
+      } else {
+        authLink.innerHTML = `<a class="nav-link" href="../html/DangNhap.html">Đăng nhập</a>`;
+      }
+    }
+
+    function logout() {
+      localStorage.removeItem('isLoggedIn');
+      localStorage.removeItem('user');
+      localStorage.removeItem('cart');
+      alert("Bạn đã đăng xuất!");
+      updateAuthLink();
+      window.location.href = "../index.html";
+    }
+    document.addEventListener('DOMContentLoaded', updateAuthLink);
+    function goToThanhToan(event) {
+      event.preventDefault();
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (!isLoggedIn) {
+        alert("Bạn cần đăng nhập để tiếp tục thanh toán!");
+        window.location.href = "../html/DangNhap.html"; // đổi nếu trang login khác
+      } else {
+        window.location.href = "./ThanhToan.html";
+      }
+    }
+  </script>
+</body>
+</html>
+

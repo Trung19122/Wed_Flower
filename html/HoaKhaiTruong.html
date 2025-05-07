@@ -75,6 +75,7 @@
     <h2 class="category-title">
       Hoa <span>Khai Trương</span>
     </h2>
+    
   </section>
   <section class="products-section">
       <div class="row" id="productsContainer">
@@ -320,6 +321,7 @@
     function logout() {
       localStorage.removeItem('isLoggedIn');
       localStorage.removeItem('user');
+      localStorage.removeItem('cart');
       alert("Bạn đã đăng xuất!");
       updateAuthLink();
       window.location.href = "../index.html";
